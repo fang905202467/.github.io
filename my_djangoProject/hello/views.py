@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse,JsonResponse,FileResponse, HttpResponseRedirect
 
 # Create your views here.
@@ -82,5 +82,6 @@ def article_dateil(request,article_id):
     文章详情，id时从1000开始的整数
     """
     if article_id < 1000:
-        return HttpResponseRedirect('/hello/404/')
+        # return HttpResponseRedirect(reverse('no_data_404'))
+        return redirect('no_data_404')
     return HttpResponse('文章{}的内容'.format(article_id))
