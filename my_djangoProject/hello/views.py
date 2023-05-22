@@ -10,6 +10,7 @@ def hello_world(request):
     return HttpResponse('hello world')
 
 def hello_china(request):
+    raise
     print(reverse('hello_world'))
     return HttpResponse('hello china')
 
